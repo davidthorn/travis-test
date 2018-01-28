@@ -1,5 +1,9 @@
 language: objective-c
 os: osx
 osx_image: xcode9.2
+before_install:
+  - swift package init --type library
+  - swift package generate-xcodeproj
 script: 
   - pod init
+  - pod install
