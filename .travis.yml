@@ -5,5 +5,4 @@ before_install:
   - swift package init --type library
   - swift package generate-xcodeproj
 script: 
-  - pod init
-  - pod install
+  - mkdir $framework_name
