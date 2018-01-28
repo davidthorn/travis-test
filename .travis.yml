@@ -12,4 +12,4 @@ script:
   - ls -l
   - git add .
   - git commit -am "commit this"
-  - git push origin develop
+  - git push origin master
