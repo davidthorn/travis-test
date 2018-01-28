@@ -6,3 +6,5 @@ before_install:
   - swift package generate-xcodeproj
 script: 
   - mkdir framework_name
+  - echo framework_name
+  - ls -l
