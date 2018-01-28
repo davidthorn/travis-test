@@ -43,4 +43,12 @@ script:
   - touch $FOLDER_NAME/$FRAMEWORK_NAME
   - ls -ll
 
+# Build failed
 
+It made 2 builds rather than 1
+
+trying
+
+env:
+  - FOLDER_NAME=David FRAMEWORK_NAME=Framework
+  
