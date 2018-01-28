@@ -1,7 +1,6 @@
 language: objective-c
 env:
-  - FOLDER_NAME=David
-  - FRAMEWORK_NAME=Framework
+  - FOLDER_NAME=David FRAMEWORK_NAME=Framework
 os: osx
 osx_image: xcode9.2
 before_install:
