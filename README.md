@@ -24,5 +24,5 @@ The command "mkdir $framework_name" exited with 0.
 trying
 
 script:
-  - echo framework_name
-  - mkdir framework_name
+  - echo $framework_name
+  - mkdir $framework_name
