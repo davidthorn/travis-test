@@ -26,3 +26,21 @@ trying
 script:
   - echo $framework_name
   - mkdir $framework_name
+  
+# BUILD SUCCESS
+
+language: objective-c
+env:
+  - FOLDER_NAME=David
+  - FRAMEWORK_NAME=Framework
+os: osx
+osx_image: xcode9.2
+before_install:
+  - swift package init --type library
+  - swift package generate-xcodeproj
+script: 
+  - mkdir $FOLDER_NAME
+  - touch $FOLDER_NAME/$FRAMEWORK_NAME
+  - ls -ll
+
+
