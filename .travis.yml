@@ -12,5 +12,10 @@ before_script:
 script:
   - echo "completed again"
 deploy:
-  - echo "deploying now"
+  provider: script
+  script: 
+    - echo "deploying"
+  on:
+    tags: true
+    all_branches: true
  
