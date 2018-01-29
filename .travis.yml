@@ -3,3 +3,9 @@ addons:
   ssh_known_hosts: github.com
 before_deploy:
   - eval "$(ssh-agent -s)"
+before_script:
+  - git remote set-url origin git@github.com:davidthorn/travis-test.git
+  - git config --global user.email "david.thorn221278@googlemail.com"
+  - git config --global user.name "David Thorn"
+script:
+  - echo "completed"
