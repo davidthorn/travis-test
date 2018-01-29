@@ -14,7 +14,7 @@ script:
 deploy:
   provider: script
   script: 
-    - echo "deploying"
+    - echo ./deploy.sh
     - git config -l
   on:
     tags: false
