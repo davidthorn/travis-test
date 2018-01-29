@@ -15,7 +15,9 @@ deploy:
   provider: script
   script: 
     - echo "deploying"
+    - git config -l
   on:
-    tags: true
+    tags: false
     all_branches: true
+    
  
