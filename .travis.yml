@@ -1,23 +1,5 @@
 language: objective-c
-env:
-  matrix:
-  - FOLDER_NAME=David FRAMEWORK_NAME=Framework
-  global:
-    secure: bLY1u43NGkDPvaFWVHLZ60p/1jUWzPxhALCjYAJROClEGASrgn1dpsP12wT4l2VUt2vt4paHVX3fveHjlTAXMwO+AqKbrXgNENjMrOsDTWPG/gMxQIgMv0EvNQ6YFA0x1Ux6x1dfXKFA0MK2PaT/BipN6qWi1iUFzY6GEbctzxNozPULj69KeHEvLbje9p1kkbAQCsQbFIQrcexjDXJm+QGwiLg+BdlFrmYOFmQKfXhO1rP5ASKyJJ7oYn7UFBPQy9ZCs3CNZWhGm5MmRdAMTkXyL8+cq4PO8u2S03KG2xgrRkU3gClTVV4Yd/V9qBQGX0x5DGPFlfcxT3+fM/6wgxLOcujTRpbq68D89h9QpGt9xgvQAYtpBwNu15ulF1jUGYIX+CZlXlltcRvqN/X8dMfW/257h8UAfVM4CPiEjIEX4wI6sJ5Lm6TVPfMkOuknC9OiZfLHnloqy+UJRrQkt/INiTZuPwg3hO0BHChD1WoyYyrGi3nmQsGV1Xv5Q4wy1AkLGca6GFZYYyPWJ+hIbFlHml+JtRVpgoI499k1d4D/ljUECzqF6j7210EZLGMHYllL1eb6nopLT5d5uO6PMhNt7IS+6tk0kL51AVReAHx/EZbULrjhXkX3AKHUeClFig5MbfyJGVFQLrUFZjcUV3uf2fYGqXu70hkG5WBA2W4=
-os: osx
-osx_image: xcode9.2
-before_install:
-- openssl aes-256-cbc -K $encrypted_3d36f6fa1448_key -iv $encrypted_3d36f6fa1448_iv -in github_deploy_key.enc -out github_deploy_key -d
-- swift package init --type library
-- swift package generate-xcodeproj
-script:
-- mkdir $FOLDER_NAME
-- touch $FOLDER_NAME/$FRAMEWORK_NAME
-- ls -l
-- git add .
-- git commit -am "commit this"
-- git push origin master
-deploy:
-  user: david.thorn221278@googlemail.com
-  password:
-    secure: OYm4ak+GGlCy7AUCC2AMzmgPgG4gv3R5OKPzYZnl3LfKz6QYVQAmvZU45b5I+T7iChaXBhIGOSJFDhnDklDfyrIfX71CtuROadHrEp+944tawe9KOB+//WeWoai2VNa4QKWBa7db8cOt/516GTyRWjjbxQTudDBimjyqo+MTWFs5NWOy6C3zkYRfRzm2YmF7U75CMCazBtv3H9S0/m2KRzpGrsVkmv5GcCZsIxhaJPf3ZxeNMiMLR13byZP2r2XWPzw+MfPQWmK/TnXLB0idzatPHLjvn3G26F0yAWrm5oNEfAYsNGFhEeMQtXGO01nD2lkpYNsrCao1/LSNQkPg2V/ZKvWNe3MkH+fiTkaICRRXK1PzA5rqEp2ExQuFibYtTkputUlHOV+h8cqIJJCakyuj+c+ZSkZM2NCjWy74ndw6SzK/VKidhSdoqtU7x/fn5Phl4xH/qZyAoNjF11atRMwmIgXoCSGY7ElSG1dxwL2SncMq/OWziXoqSVPODNqWAweADPByxtrGRo/VvfXDlXV+0NyWNlR9F6e6PkeVshnJ7xPSgSUuau8Zpy/cei3SE7FBxa1yhttb9OazwuPqC5QxqIXOacgzaUVV2LA+L+lHnwWBWtm9wf7JO1jUTPlR8V0acFWaBLn0SSMFze1J7MIcOTVXG7sQmNWQL+NcFg0=
+addons:
+  ssh_known_hosts: github.com
+before_deploy:
+  - eval "$(ssh-agent -s)"
