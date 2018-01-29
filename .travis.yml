@@ -11,6 +11,6 @@ before_script:
   - git config --global user.name "David Thorn"
 script:
   - echo "completed again"
- deploy:
+deploy:
   - echo "deploying now"
  
